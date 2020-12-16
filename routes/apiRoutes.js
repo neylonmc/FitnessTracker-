@@ -1,9 +1,9 @@
-const db = require ("../models");
+const db = require('../models')
 
-module.exports = function (app) {
+module.exports = (app) => {
     
     //Find all the workouts recorded
-    app.post("/api/workouts", (req, res) => {
+    app.get("/api/workouts", (req, res) => {
         db.Workouts.find({})
         .then(workout => {
             res.json(workout);
@@ -13,5 +13,12 @@ module.exports = function (app) {
         });
     });
 
-    app.post
+    app.post("/api/workouts", (req, res) => {
+        db.Workouts.create({})
+        .then(newWorkout => {
+            res.json(newWorkout);
+        });
+    });
 }
+
+
