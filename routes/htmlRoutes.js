@@ -1,11 +1,16 @@
 var path = require("path");
+const db = require("../models");
 
-module.exports = function(app) {
-  // Called when "Countinue Workout" or "new Workout" is clicked in index.html
+module.exports = (app) => {
+  //Home Page
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+  //Excerise HTML
   app.get("/exercise", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
   });
-  // Not quite sure what this is used for yet ....
+  //Stats HTML
   app.get("/stats", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
   });
