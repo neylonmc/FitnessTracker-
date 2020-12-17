@@ -6,6 +6,8 @@ const logger = require("morgan");
 
 const PORT = process.env.PORT || 3000;
 
+const db = require("./models");
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,12 +15,11 @@ app.use(express.json());
 app.use(logger("dev")); 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/workoutdb",
+ {
   useNewUrlParser: true,
   useFindAndModify: false
-});
-
-const db = require("./models");
+  });
 
 // routes
 app.use(require("./routes/apiRoutes.js"));
