@@ -29,7 +29,10 @@ router.get("/api/workouts", (req, res) => {
 
 //Put route to get the most recent workout
 router.put("/api/workouts/:id", ({ body, params }, res) => {
-  Workout.findByIdAndUpdate(params.id, {$push: {exercises: body}}, {new: true, runValidators: true})
+  Workout.findByIdAndUpdate(
+    params.id, 
+    {$push: {exercises: body}},
+    {new: true, runValidators: true})
     .then(workoutdb => {
       res.json(workoutdb);
     })
@@ -40,7 +43,8 @@ router.put("/api/workouts/:id", ({ body, params }, res) => {
 
 //Get route
 router.get("/api/workouts/range", (req, res) => {
-  Workout.find({}).limit(9)
+  Workout.find({})
+    .limit(9)
     .then(workoutdb => {
       res.json(workoutdb);
     })
@@ -48,8 +52,5 @@ router.get("/api/workouts/range", (req, res) => {
       res.json(err);
     });
 });
-
-
-
 
 module.exports = router;
