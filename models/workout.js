@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//Allowing users to create their own exercises
 const WorkoutSchema = new Schema({
     day: {
         type: Date,
         default: Date.now
     },
-
+//Define the type of exercise
   exercises:[{
 
     type: {
@@ -43,5 +44,5 @@ const WorkoutSchema = new Schema({
 
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
-
+//Export 
 module.exports = Workout;

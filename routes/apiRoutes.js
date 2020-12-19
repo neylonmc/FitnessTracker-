@@ -1,6 +1,8 @@
 const router = require("express").Router();
+//Routing to workout.js file
 const Workout = require("../models/workout.js");
 
+//Post route
 router.post("/api/workouts", ({ body }, res) => {
 
   Workout.create(body)
@@ -12,6 +14,7 @@ router.post("/api/workouts", ({ body }, res) => {
     });
 });
 
+//Get route
 router.get("/api/workouts", (req, res) => {
   
   Workout.find({})
@@ -24,7 +27,7 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-
+//Put route to get the most recent workout
 router.put("/api/workouts/:id", ({ body, params }, res) => {
   Workout.findByIdAndUpdate(params.id, {$push: {exercises: body}}, {new: true, runValidators: true})
     .then(workoutdb => {
@@ -35,6 +38,7 @@ router.put("/api/workouts/:id", ({ body, params }, res) => {
     });
 });
 
+//Get route
 router.get("/api/workouts/range", (req, res) => {
   Workout.find({}).limit(9)
     .then(workoutdb => {
