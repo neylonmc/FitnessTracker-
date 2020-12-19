@@ -1,7 +1,7 @@
 # Fitness Tracker
 Fitness Tracker using a Mongo database with a Mongoose schema and handle routes with Express.
 
-[Check out the deployed site here]()
+[Check out the deployed site here](https://secret-mesa-83729.herokuapp.com/)
 
 ## Table of Contents
 
@@ -45,7 +45,7 @@ $ npm start
 ## Links and Screenshots
 Repo: https://github.com/neylonmc/FitnessTracker-.git
 
-Deployed App: HERE
+Deployed App: https://secret-mesa-83729.herokuapp.com/
 
 - UI:
 <img src = "public/images/front.png" width="500px">
