@@ -1,17 +1,17 @@
-var path = require("path");
-const db = require("../models");
+const path = require("path");
+const router = require("express").Router()
 
-module.exports = (app) => {
-  //Home Page
-  app.get("/", function(req, res) {
+  router.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
   //Excerise HTML
-  app.get("/exercise", function(req, res) {
+  router.get("/exercise", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
   });
   //Stats HTML
-  app.get("/stats", function(req, res) {
+  router.get("/stats", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
   });
-};
+
+module.exports = router
+  
