@@ -48,13 +48,13 @@ Repo: https://github.com/neylonmc/FitnessTracker-.git
 
 Deployed App: HERE
 
-UI: 
+- UI:
 <img src = "public/images/front.png" width="500px">
 
-Creating workout: 
+- Creating workout: 
 <img src = "public/images/adding.gif" width="500px">
 
-Dashbord: 
+- Dashbord: 
 <img src = "public/images/dashboard.gif" width="500px" >
 
 ## Created by
